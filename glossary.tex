@@ -6,20 +6,9 @@
 
 %\newcommand{\ivoa}[1]{\href{http://nvo.stsci.edu/vor10/getRecord.aspx?id=#1}{#1}}
 
-% RESOLVE OBJECTS ON SIMBAD
-% Adapted from http://tex.stackexchange.com/questions/4154/how-to-use-newcommand-for-href
-% Same functionality as AASTEX macro: http://aastex.aas.org/objects/objectlinking.aas.htm
-% #2 is mandatory object name (as written in the text) e.g. \object{IC 2391}
-% #1 is optional SIMBAD name (if different from #2) e.g. \object[ETA CHA]{$\eta$~Cha}
+\usepackage{xspace}
 
 
-
-%defining different glossaries
-%\newglossary{gastro}{astrogls}{astroglo}{General Astronomy}
-%\newglossary{gastro}{astrogls}{astroglo}{Telescopes and Surveys}
-%\newglossary{ga}{gagls}{gaglo}{Genetic Algorithms}
-
-% i.e. -- e.g. -- etc. -- et. al.
 \newcommand{\eg}{{\em e.g.,}}
 \newcommand{\ie}{{\em i.e.,}}
 \newcommand{\etc}{{\em etc.}}
@@ -85,7 +74,7 @@
 \newcommand{\cofiftysix}{$^{56}\textrm{Co}$}
 \newcommand{\fefiftysix}{$^{56}\textrm{Fe}$}%
 \newcommand{\nucl}[2]{\ensuremath{^{#2}\textrm{#1}}}
-\makeatletter \newcommand{\ion}[2]{#1 \textsc{\@roman{#2}}} \makeatother
+%\makeatletter \newcommand{\ion}[2]{#1 \textsc{\@roman{#2}}} \makeatother
 
 % ------- BEGIN GLOSSARY ------------
 
@@ -106,6 +95,7 @@
 \newglossaryentry{lte}{name={LTE}, description={Local Thermodynamic Equilibrium}, first={local thermodynamic equilibrium (LTE)}}
 \newglossaryentry{lsr}{name={LSR}, description={Local Standard of Rest}, first={\textit{local standard of rest} (LSR)}}
 \newglossaryentry{mc}{name={MC}, description={Monte Carlo}, first={\textit{Monte Carlo} (MC)}}
+\newglossaryentry{wcs}{name={WCS}, description={world coordinate system}, first={world coordinate system (WCS)}}
 \newglossaryentry{cmf}{name=CMF, text=CMF, first=Comoving Frame (CMF henceforth)}
 \newcommand{\dmb}[1][15]{\ensuremath{\Delta\,m_{#1}(B)}}
 
@@ -114,29 +104,35 @@
 
 
 
-%software
+% ------------- Software ------------------
 \newcommand{\iraffoot}{}
 \newglossaryentry{sfit}{name=SFIT, text=\textsc{sfit}, description={spectral fitting program for hot stars \citep{2001A&A...376..497J}}, first={\textsc{sfit} \citep{2001A&A...376..497J}}}
 \newglossaryentry{iraf}{name=IRAF, text=\textsc{iraf}, description={Image Reduction and Analysis Facility maintained by NOAO}, first={\textsc{iraf}\protect\footnote{IRAF: the Image Reduction and Analysis Facility is distributed by the National Optical Astronomy Observatory, which is operated by the Association of Universities for Research in Astronomy (AURA) under cooperative agreement with the National Science Foundation (NSF).}}}
 \newglossaryentry{pyraf}{name=PyRAF, text=\textsc{PyRAF}, description={Python wrap of \gls{iraf} maintained by STSCI}, first=\textsc{PyRAF} \protect\footnote{PyRAF is a product of the Space Telescope Science Institute, which is operated by AURA for NASA.}}
-%
 \newglossaryentry{scipy}{name=SciPy, text=\textsc{Scipy}, description={Scientific Python \cite{Jones:2001fk}}}
 \newglossaryentry{moog}{name=MOOG,text={\textsc{moog}}, description={spectral synthesis software \citep{1973ApJ...184..839S}}, first={\textsc{Moog} \citep{1973ApJ...184..839S}}}
 \newglossaryentry{atlas9}{name=ATLAS9,description={grid of stellar atmospheres \citep{2004astro.ph..5087C}}, first={ATLAS9 \citep{2004astro.ph..5087C}}}
 \newglossaryentry{vald}{name=VALD,description={Vienna Atomic Line Database \citep{2000BaltA...9..590K}}, first={Vienna Atomic Line Database \citep[VALD;][]{2000BaltA...9..590K}}}
 \newglossaryentry{sextractor}{name=SExtractor, text=\textsc{SExtractor}, description={Source Extractor photometry program \citep{1996A&AS..117..393B}}, first={\textsc{SExtractor} \citep{1996A&AS..117..393B}}}
+
+\newglossaryentry{swarp}{name=SWarp, text=\textsc{SWarp}, description={SWarp \citep{2002ASPC..281..228B}}, first={\textsc{SWarp} \citep{2002ASPC..281..228B}}}
+
+
 \newglossaryentry{idl}{name=IDL,text={\textsc{idl}}, description={Interactive Data Language}}
 \newglossaryentry{makee}{name=MAKEE,text=\textsc{makee}, description={MAuna Kea Echelle Extraction by Tom Barlow available}}% at \verb+http://spider.ipac.caltech.edu/staff/tab/makee/index.html+}}
 \newglossaryentry{minuit}{name=MINUIT,text={\textsc{minuit}}, description={collection of numerical optimization tools \citep{James:1975dr}}}
 \newglossaryentry{migrad}{name=MIGRAD,text={\textsc{migrad}}, description={numerical gradient optimization tools - part of \gls{minuit}}}
 \newglossaryentry{dolphot}{name=DOLPHOT, text=DOLPHOT, description=photometry package for HST, first=DOLPHOT \citep{2000PASP..112.1383D}}
+\newglossaryentry{synphot}{name=synphot, text={\textsc{synphot}}, description={synthetic photometry package from STSCI}, first={\textsc{synphot}\protect\footnote{\textsc{synphot} is a product of the Space Telescope Science Institute, which is operated by AURA for NASA.}}}
 \newglossaryentry{chianti}{name=CHIANTI, text=CHIANTI, description= CHIANTI Database 7.1, first =CHIANTI 7.1 \citep{1997A&AS..125..149D,2012ApJ...744...99L}}
 \newglossaryentry{synpp}{name=SYNPP, text=SYN++, description= SYN++ software, first =SYN++ \citep{2011PASP..123..237T}}
 \newglossaryentry{tardis}{name=TARDIS, text=TARDIS, description= TARDIS MC code, first = Temporal And Radiative Diffusion In Supernovae (TARDIS)}
+\newglossaryentry{astropy}{name=ASTROPY, text=\textsc{astropy}, description=\textsc{astropy} framework, first = \textsc{astropy} \citep{2013A&A...558A..33A}}
 
 
+% -------------------------------------
 
-% --- telescopes & surveys
+% ------------------------ telescopes & surveys ----------------
 \newglossaryentry{2mass}{name=2MASS,description={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}, first={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}}
 \newglossaryentry{nomad}{name=NOMAD,first={Naval Observatory Merged Astrometric Dataset \citep[NOMAD; ][]{2005yCat.1297....0Z}}}
 \newglossaryentry{wifes}{name=WIFES, text=\textsc{WiFeS}, first={\textsc{WiFeS} \citep{2007Ap&SS.310..255D}},  description={Wide Field Spectrograph - \gls{ifu} mounted on the 2.3\,m telescope at Siding Spring Observatory}}
@@ -171,7 +167,11 @@
 \newglossaryentry{bepposax}{name=BeppoSAX, description={\xray\ satellite named in honor of Giuseppe "Beppo" Occhialini}}
 \newglossaryentry{rosat}{name=ROSAT, description={short for R\"{o}ntgensatellit}, first={ROSAT}}
 \newglossaryentry{hete2}{name=HETE2, description={High Energy Transient Explorer}, first={High Energy Transient Explorer (HETE)}}
+
+% ----------------- Gemini and Gemini Instrumentation ----------------
 \newglossaryentry{gnirs}{name=GNIRS, description={Gemini Near InfraRed Spectrograph mounted on the Gemini North Telescope}}
+\newglossaryentry{gmosn}{name=GMOS, description={Gemini Multi Object Spectrograph mounted on the
+ Gemini North Telescope}, first={GMOS \citep[Gemini Multi Object Spectrograph;][]{2004PASP..116..425H}}}
 \newglossaryentry{swift}{name=Swift, description={Swift Gamma-Ray Burst Mission}}
 \newglossaryentry{vla}{name=VLA, description={Very Large Array radio telescope located in North America}, first={Very Large Array (VLA)}}
 \newglossaryentry{evla}{name=EVLA, description={Extended Very Large Array radio telescope located in North America}, first={Extended Very Large Array (EVLA)}}
@@ -188,19 +188,27 @@
 \newglossaryentry{ccd}{name=CCD,description={Charged Coupled Device}, first={charged coupled device (CCD)}, firstplural={charged coupled devices (CCDs)}}
 
 
-%supernova object lookup
-\newcommand{\sn}[2]{SN~#1#2}
+% ---------------- supernova object lookup ---------------
+\newcommand{\sn}[2]{SN~#1#2\xspace}
 
-\newcommand{\snr}[1]{SNR~#1}
-\newcommand{\grb}[1]{GRB~#1}
+\newcommand{\snr}[1]{SNR~#1\xspace}
+\newcommand{\grb}[1]{GRB~#1\xspace}
 
 
 
-% different ias
-\newglossaryentry{sn}{name=Supernova, text={SN}, plural={SNe}, description={exploding star}, nonumberlist=true}
+
+% ----------------- Supernovae -------------
+
+% ----------------- Supernova Physics -------
+\newglossaryentry{irc}{name=IRC, text={IRC}, description={infrared catastrophe}, first={infrared catastrophe \citep[IRC;][]{1980PhDT.........1A}}}
+
+
+
+% ---------------- Supernova Type Ia ----------------
+\newglossaryentry{sn}{name=Supernova, text={SN}, plural={SNe}, description={exploding star}, nonumberlist=true, first={supernova (SN)}, firstplural={supernovae (SNe)}}
 \newglossaryentry{snia}{name=Type~Ia (SN~Ia), text={SN~Ia}, description={Thermonuclear explosion of a white dwarf - spectra show no hydrogen but a strong silicon line},first={Type~Ia supernova (SN~Ia)}, firstplural={Type Ia supernovae (SNe~Ia)}, plural={SNe~Ia}, parent=sn, nonumberlist=true}
-\newcommand{\sneia}{\glspl*{snia}}
-\newcommand{\snia}{\gls*{snia}}
+\newcommand{\sneia}{\glspl*{snia}\xspace}
+\newcommand{\snia}{\gls*{snia}\xspace}
 
 \newglossaryentry{branchnormal}{name={branch-normal}, text=\textit{Branch-normal}, description={Large homogeneous class of Type Ia Supernovae, defined in \citet{1993AJ....106.2383B}}, first={\textit{Branch-normal} SNe Ia \citep{1993AJ....106.2383B}}, parent=snia} 
 \newglossaryentry{91t}{name={91T-like}, description={Luminous class of Type Ia supernovae similar to \sn{1991}{T} \citep{1992AJ....103.1632P}} , first={91T-like}, parent=snia} 
