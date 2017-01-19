@@ -35,11 +35,11 @@
 \newcommand{\Nhi}{\hbox{$N_{\HIsub}$}}
 \newcommand{\nhi}{\hbox{$n_{\HIsub}$}}
 \newcommand{\Mhi}{\hbox{$M_{\HIsub}$}}
-\newcommand{\ra}{$\alpha$}
-\newcommand{\rasc}[4]{\hbox{\ensuremath{\alpha=#1^h#2^m#3\overset{s}{.}#4}}}
-\newcommand{\decl}[3]{\hbox{\ensuremath{\delta=#1^{\circ}#2\arcmin#3\arcsec}}}
+%\newcommand{\ra}{$\alpha$}
+\newcommand{\ra}[4]{\hbox{\ensuremath{\alpha=#1^h#2^m#3\overset{s}{.}#4}}}
+\newcommand{\de}[3]{\hbox{\ensuremath{\delta=#1^{\circ}#2\arcmin#3\arcsec}}}
 \newcommand{\kpc}{kpc}
-\newcommand{\dec}{$\delta$}
+%\newcommand{\dec}{$\delta$}
 \newcommand{\degree}{\textdegree}
 \newcommand{\kms}{\ensuremath{\textrm{km}~\textrm{s}^{-1}}}
 \newcommand{\mjbeam}{\hbox{mJy beam$^{-1}$}}
@@ -126,14 +126,18 @@
 \newglossaryentry{synphot}{name=synphot, text={\textsc{synphot}}, description={synthetic photometry package from STSCI}, first={\textsc{synphot}\protect\footnote{\textsc{synphot} is a product of the Space Telescope Science Institute, which is operated by AURA for NASA.}}}
 \newglossaryentry{chianti}{name=CHIANTI, text=CHIANTI, description= CHIANTI Database 7.1, first =CHIANTI 7.1 \citep{1997A&AS..125..149D,2012ApJ...744...99L}}
 \newglossaryentry{synpp}{name=SYNPP, text=SYN++, description= SYN++ software, first =SYN++ \citep{2011PASP..123..237T}}
-\newglossaryentry{tardis}{name=TARDIS, text=TARDIS, description= TARDIS MC code, first = Temporal And Radiative Diffusion In Supernovae (TARDIS)}
+\newglossaryentry{tardis}{name=TARDIS, text=\textsc{tardis}, description= TARDIS MC code, first = {\textsc{tardis} \citep{2014MNRAS.440..387K}}}
 \newglossaryentry{astropy}{name=ASTROPY, text=\textsc{astropy}, description=\textsc{astropy} framework, first = \textsc{astropy} \citep{2013A&A...558A..33A}}
-
+\newglossaryentry{artis}{name=ARTIS, text=\textsc{artis}, description= ARTIS MC code, first = \textsc{artis} \citep{2009MNRAS.398.1809K}}
+\newglossaryentry{sedona}{name=SEDONA, text=\textsc{sedona}, description= Sedona MC code, first = \textsc{sedona} \citep{2006ApJ...651..366K}}
+\newglossaryentry{mlmc}{name=MLMC, text=ML93, description= Mazzali Lucy Monte Carlo, first ={Mazzali \& Lucy (1993, ML93) code}}
+\newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= MC code, first = {\textsc{starkit} \citep{wolfgang_kerzendorf_2015_28016}}}
 
 % -------------------------------------
 
 % ------------------------ telescopes & surveys ----------------
 \newglossaryentry{2mass}{name=2MASS,description={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}, first={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}}
+\newglossaryentry{wiserep}{name=\textsc{WISeREP}, description={Weizmann Interactive Supernova data REPository \citep{2006AJ....131.1163S}}, first={\textsc{WISeREP} \citep{2012PASP..124..668Y}}}
 \newglossaryentry{nomad}{name=NOMAD,first={Naval Observatory Merged Astrometric Dataset \citep[NOMAD; ][]{2005yCat.1297....0Z}}, description={Naval Observatory Merged Astrometric Dataset}}
 \newglossaryentry{wifes}{name=WIFES, text=\textsc{WiFeS}, first={\textsc{WiFeS} \citep{2007Ap&SS.310..255D}},  description={Wide Field Spectrograph - \gls{ifu} mounted on the 2.3\,m telescope at Siding Spring Observatory}}
 \newglossaryentry{scp}{name=SCP,description={Supernova Cosmology Project, led by Saul Perlmutter}, first={Supernova Cosmology Project (SCP)}}
@@ -143,9 +147,11 @@
 \newglossaryentry{hires}{name=HIRES, description={High Resolution Echelle Spectrometer mounted on the Keck Telescope}, first={High Resolution Echelle Spectrometer \citep[HIRES;][]{1994SPIE.2198..362V}}}
 \newglossaryentry{lris}{name=LRIS,description={Low Resolution Imaging Spectrometer mounted on the Keck Telescope}, first={Low-Resolution Imaging Spectrometer \citep[LRIS;][]{Oke95}}}
 
+
  
 \newglossaryentry{essence}{name=ESSENCE,description={The `Equation of State: SupErNovae trace Cosmic Expansion' project \citep[ESSENCE;][]{2002AAS...201.7809G}}, first={`The Equation of State: SupErNovae trace Cosmic Expansion' \citep[ESSENCE;][]{2002AAS...201.7809G}}}
 \newglossaryentry{ifu}{name=IFU,description={Optical instrument combining spectrographic and imaging capabilities, used to obtain spatially resolved spectra}, first={Integral Field Unit (IFU)}, firstplural={Integral Field Units (IFUs)}} 
+
 
 \newglossaryentry{besancon}{name=Besan\c{c}on Model, description={Model of stellar population synthesis of the Galaxy, including kinematics.}}%  \verb+http://model.obs-besancon.fr+} }, nonumberlist=true}
 
@@ -167,6 +173,7 @@
 \newglossaryentry{bepposax}{name=BeppoSAX, description={\xray\ satellite named in honor of Giuseppe "Beppo" Occhialini}}
 \newglossaryentry{rosat}{name=ROSAT, description={short for R\"{o}ntgensatellit}, first={ROSAT}}
 \newglossaryentry{hete2}{name=HETE2, description={High Energy Transient Explorer}, first={High Energy Transient Explorer (HETE)}}
+\newglossaryentry{ska}{name=SKA, description={Square Kilometre Array}, first={Square Kilometre Array (SKA)}}
 
 % ----------------- Gemini and Gemini Instrumentation ----------------
 \newglossaryentry{gnirs}{name=GNIRS, description={Gemini Near InfraRed Spectrograph mounted on the Gemini North Telescope}}
@@ -198,6 +205,7 @@
 
 
 % ----------------- Supernovae -------------
+
 
 % ----------------- Supernova Physics -------
 \newglossaryentry{irc}{name=IRC, text={IRC}, description={infrared catastrophe}, first={infrared catastrophe \citep[IRC;][]{1980PhDT.........1A}}}
@@ -303,7 +311,7 @@
 
 %general astrophysics
 \newglossaryentry{ew}{name=Equivalent Width, text={EW}, description={width of a rectangle that has the same area as a spectral line when taken to zero flux}, first={equivalent width (EW)}, firstplural={equivalent widths (EWs)}}
-\newglossaryentry{agb}{name=AGB,description={Asymptotic Giant Branch}}
+\newglossaryentry{agb}{name=AGB,description={Asymptotic Giant Branch}, first={Asymptotic Giant Branch (AGB)}}
 \newglossaryentry{cmb}{name=CMB,description={Cosmic Microwave Background}}
 \newglossaryentry{csm}{name=CSM,description={Circumstellar Medium}, first={circumstellar medium (CSM)}}
 \newglossaryentry{csi}{name=CSI,description={Circumstellar Interaction}, first={circumstellar interaction (CSI)}}
@@ -346,4 +354,3 @@
 \newcommand{\loglbol}{\ensuremath{\log{L/L_\odot}}}
 
 
-\renewcommand{\sn}[2]{\object{SN~#1#2}}
