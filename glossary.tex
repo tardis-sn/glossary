@@ -117,12 +117,14 @@
 
 \newglossaryentry{swarp}{name=SWarp, text=\textsc{SWarp}, description={SWarp \citep{2002ASPC..281..228B}}, first={\textsc{SWarp} \citep{2002ASPC..281..228B}}}
 
+\newglossaryentry{astrodrizzle}{name=AstroDrizzle, text=\textsc{AstroDrizzle}, description={AstroDrizzle \citep{2012drzp.book.....G}}, first={\textsc{AstroDrizzle} \citep{2012drzp.book.....G}}}
+
 
 \newglossaryentry{idl}{name=IDL,text={\textsc{idl}}, description={Interactive Data Language}}
 \newglossaryentry{makee}{name=MAKEE,text=\textsc{makee}, description={MAuna Kea Echelle Extraction by Tom Barlow available}}% at \verb+http://spider.ipac.caltech.edu/staff/tab/makee/index.html+}}
 \newglossaryentry{minuit}{name=MINUIT,text={\textsc{minuit}}, description={collection of numerical optimization tools \citep{James:1975dr}}}
 \newglossaryentry{migrad}{name=MIGRAD,text={\textsc{migrad}}, description={numerical gradient optimization tools - part of \gls{minuit}}}
-\newglossaryentry{dolphot}{name=DOLPHOT, text=DOLPHOT, description=photometry package for HST, first=DOLPHOT \citep{2000PASP..112.1383D}}
+\newglossaryentry{dolphot}{name=DOLPHOT, text=\textsc{dolphot}, description=photometry package for HST, first=\textsc{dolphot} \citep{2000PASP..112.1383D}}
 \newglossaryentry{synphot}{name=synphot, text={\textsc{synphot}}, description={synthetic photometry package from STSCI}, first={\textsc{synphot}\protect\footnote{\textsc{synphot} is a product of the Space Telescope Science Institute, which is operated by AURA for NASA.}}}
 \newglossaryentry{chianti}{name=CHIANTI, text=CHIANTI, description= CHIANTI Database 7.1, first =CHIANTI 7.1 \citep{1997A&AS..125..149D,2012ApJ...744...99L}}
 \newglossaryentry{synpp}{name=SYNPP, text=SYN++, description= SYN++ software, first =SYN++ \citep{2011PASP..123..237T}}
@@ -131,13 +133,15 @@
 \newglossaryentry{artis}{name=ARTIS, text=\textsc{artis}, description= ARTIS MC code, first = \textsc{artis} \citep{2009MNRAS.398.1809K}}
 \newglossaryentry{sedona}{name=SEDONA, text=\textsc{sedona}, description= Sedona MC code, first = \textsc{sedona} \citep{2006ApJ...651..366K}}
 \newglossaryentry{mlmc}{name=MLMC, text=ML93, description= Mazzali Lucy Monte Carlo, first ={Mazzali \& Lucy (1993, ML93) code}}
-\newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= MC code, first = {\textsc{starkit} \citep{wolfgang_kerzendorf_2015_28016}}}
+\newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= TARDIS MC code, first = {\textsc{starkit} \cite{wolfgang_kerzendorf_2015_28016}}}
+
+\newglossaryentry{pyne}{name=PYNE, text=\textsc{pyne}, description= PYNE code, first = {\textsc{pyne} \cite{Scopatz2012a}}}
+\newglossaryentry{multinest}{name=MULTINEST, text=\textsc{MultiNest}, description=MultiNest, first={\textsc{MultiNest} \citep{2009MNRAS.398.1601F}}}
 
 % -------------------------------------
 
 % ------------------------ telescopes & surveys ----------------
 \newglossaryentry{2mass}{name=2MASS,description={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}, first={Two Micron All Sky Survey \citep{2006AJ....131.1163S}}}
-\newglossaryentry{wiserep}{name=\textsc{WISeREP}, description={Weizmann Interactive Supernova data REPository \citep{2006AJ....131.1163S}}, first={\textsc{WISeREP} \citep{2012PASP..124..668Y}}}
 \newglossaryentry{nomad}{name=NOMAD,first={Naval Observatory Merged Astrometric Dataset \citep[NOMAD; ][]{2005yCat.1297....0Z}}, description={Naval Observatory Merged Astrometric Dataset}}
 \newglossaryentry{wifes}{name=WIFES, text=\textsc{WiFeS}, first={\textsc{WiFeS} \citep{2007Ap&SS.310..255D}},  description={Wide Field Spectrograph - \gls{ifu} mounted on the 2.3\,m telescope at Siding Spring Observatory}}
 \newglossaryentry{scp}{name=SCP,description={Supernova Cosmology Project, led by Saul Perlmutter}, first={Supernova Cosmology Project (SCP)}}
@@ -146,7 +150,6 @@
 \newglossaryentry{flames}{name=FLAMES,description={Multi-object, intermediate and high resolution spectrograph mounted on the  \gls{vlt}}}
 \newglossaryentry{hires}{name=HIRES, description={High Resolution Echelle Spectrometer mounted on the Keck Telescope}, first={High Resolution Echelle Spectrometer \citep[HIRES;][]{1994SPIE.2198..362V}}}
 \newglossaryentry{lris}{name=LRIS,description={Low Resolution Imaging Spectrometer mounted on the Keck Telescope}, first={Low-Resolution Imaging Spectrometer \citep[LRIS;][]{Oke95}}}
-
 
  
 \newglossaryentry{essence}{name=ESSENCE,description={The `Equation of State: SupErNovae trace Cosmic Expansion' project \citep[ESSENCE;][]{2002AAS...201.7809G}}, first={`The Equation of State: SupErNovae trace Cosmic Expansion' \citep[ESSENCE;][]{2002AAS...201.7809G}}}
@@ -159,8 +162,12 @@
 \newglossaryentry{iau}{name=IAU,description={International Astronomical Union}, first={IAU}}
 \newglossaryentry{chandra}{name=Chandra,description={Chandra \xray\ Observatory (space-based)}}
 \newglossaryentry{hst}{name=HST,description={Hubble Space Telescope}}
-\newglossaryentry{wfpc2}{name=WFPC2,description={Wide-Field Planetary Camera 2 mounted on the \gls{hst}}, first={Wide-Field Planetary Camera 2 (WFPC2)}}
-\newglossaryentry{acs}{name=ACS,description={Advanced Camera for Surveys mounted on the \gls{hst}}, first={Advanced Camera for Surveys (ACS)}}
+\newglossaryentry{hst.wfpc2}{name=WFPC2,description={Wide-Field Planetary Camera 2 mounted on the \gls{hst}}, first={Wide-Field Planetary Camera 2 (WFPC2)}}
+\newglossaryentry{hst.acs}{name=ACS,description={Advanced Camera for Surveys mounted on the \gls{hst}}, first={Advanced Camera for Surveys (ACS)}}
+\newglossaryentry{hst.wfc3}{name=WFC3,description={Wide-Field Camera 3 mounted on the \gls{hst}}, first={Wide-Field Camera 3 (WFC3)}}
+\newglossaryentry{hst.cte}{name=CTE, description={charge transfer efficiency (CTE)}, first={charge transfer efficiency \citep[CTE; see ][for a description]{2009acs..rept....1C}}}
+
+
 \newglossaryentry{snls}{name=SNLS,description={Supernova Legacy Survey \citep{2003AAS...203.8209P}}, first={Supernova Legacy Survey \citep[SNLS;][]{2003AAS...203.8209P}}}
 \newglossaryentry{dass}{name=DASS, description={Digitized Astronomy Supernova Survey \citep{1975PASP...87..565C}}, first={Digitized Astronomy Supernova Survey \citep[DASS;][]{1975PASP...87..565C}}}
 \newglossaryentry{bait}{name=BAIT, description={Berkley Automatic Imaging Telescope \citep{1993PASP..105.1164R}}, first={Berkley Automatic Imaging Telescope \citep[BAIT;][]{1993PASP..105.1164R}}}
