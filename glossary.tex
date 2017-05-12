@@ -7,7 +7,11 @@
 %\newcommand{\ivoa}[1]{\href{http://nvo.stsci.edu/vor10/getRecord.aspx?id=#1}{#1}}
 
 \usepackage{xspace}
-
+\usepackage[xindy, toc, hyperfirst=false, nolist, nostyles, sanitize={name=false,description=false,symbol=false}]{glossaries}
+\glsdisablehyper
+\usepackage[hyperref,x11names, table]{xcolor}
+\usepackage{hyperref}
+\usepackage{aas_macros}
 
 \newcommand{\eg}{{\em e.g.,}}
 \newcommand{\ie}{{\em i.e.,}}
@@ -98,7 +102,7 @@
 \newglossaryentry{wcs}{name={WCS}, description={world coordinate system}, first={world coordinate system (WCS)}}
 \newglossaryentry{cmf}{name=CMF, text=CMF, first=Comoving Frame (CMF henceforth), description={Comoving Frame}}
 \newcommand{\dmb}[1][15]{\ensuremath{\Delta\,m_{#1}(B)}}
-\newglossaryentry{uvoir}{name=UVOIR, text=UVOIR, first=UV/optical/Near-IR (UVOIR), description={UV/optical/Near-IR}}
+
 
 
 
@@ -109,15 +113,7 @@
 \newglossaryentry{sfit}{name=SFIT, text=\textsc{sfit}, description={spectral fitting program for hot stars \citep{2001A&A...376..497J}}, first={\textsc{sfit} \citep{2001A&A...376..497J}}}
 \newglossaryentry{iraf}{name=IRAF, text=\textsc{iraf}, description={Image Reduction and Analysis Facility maintained by NOAO}, first={\textsc{iraf}\protect\footnote{IRAF: the Image Reduction and Analysis Facility is distributed by the National Optical Astronomy Observatory, which is operated by the Association of Universities for Research in Astronomy (AURA) under cooperative agreement with the National Science Foundation (NSF).}}}
 \newglossaryentry{pyraf}{name=PyRAF, text=\textsc{PyRAF}, description={Python wrap of \gls{iraf} maintained by STSCI}, first=\textsc{PyRAF} \protect\footnote{PyRAF is a product of the Space Telescope Science Institute, which is operated by AURA for NASA.}}
-\newglossaryentry{astropy}{name=ASTROPY, text=\textsc{astropy}, description=\textsc{astropy} framework, first = \textsc{astropy} \citep{2013A&A...558A..33A}}
-\newglossaryentry{numpy}{name=NUMPY, text=\textsc{numpy}, description=\textsc{numpy} framework, first = \textsc{numpy} \citep{walt2011numpy}}
-\newglossaryentry{scipy}{name=SCIPY, text=\textsc{scipy}, description=\textsc{scipy} framework, first = \textsc{scipy} \citep{Jones:2001fk}}
-\newglossaryentry{matplotlib}{name=matplotlib, text=\textsc{matplotlib}, description=\textsc{matplotlib} framework, first = \textsc{matplotlib} \citep{hunter2007matplotlib}}
-\newglossaryentry{pandas}{name=pandas, text=\textsc{pandas}, description=\textsc{pandas} framework, first = \textsc{pandas} \citep{mckinney2010data}}
-\newglossaryentry{ipython}{name=ipython, text=\textsc{ipython}, description=\textsc{ipython} framework, first = \textsc{ipython} \citep{perez2007ipython}}
-\newglossaryentry{jupyter}{name=jupyter, text=\textsc{jupyter}, description=\textsc{jupyter} framework, first = \textsc{jupyter} \citep{kluyver2016jupyter,perez2015project,ragan2014jupyter}}
-\newglossaryentry{aplpy}{name=aplpy, text=\textsc{aplpy}, description=\textsc{aplpy} framework, first = \textsc{aplpy} \citep{2012ascl.soft08017R}}
-
+\newglossaryentry{scipy}{name=SciPy, text=\textsc{Scipy}, description={Scientific Python \cite{Jones:2001fk}}}
 \newglossaryentry{moog}{name=MOOG,text={\textsc{moog}}, description={spectral synthesis software \citep{1973ApJ...184..839S}}, first={\textsc{Moog} \citep{1973ApJ...184..839S}}}
 \newglossaryentry{atlas9}{name=ATLAS9,description={grid of stellar atmospheres \citep{2004astro.ph..5087C}}, first={ATLAS9 \citep{2004astro.ph..5087C}}}
 \newglossaryentry{vald}{name=VALD,description={Vienna Atomic Line Database \citep{2000BaltA...9..590K}}, first={Vienna Atomic Line Database \citep[VALD;][]{2000BaltA...9..590K}}}
@@ -137,15 +133,16 @@
 \newglossaryentry{chianti}{name=CHIANTI, text=CHIANTI, description= CHIANTI Database 7.1, first =CHIANTI 7.1 \citep{1997A&AS..125..149D,2012ApJ...744...99L}}
 \newglossaryentry{synpp}{name=SYNPP, text=SYN++, description= SYN++ software, first =SYN++ \citep{2011PASP..123..237T}}
 \newglossaryentry{tardis}{name=TARDIS, text=\textsc{tardis}, description= TARDIS MC code, first = {\textsc{tardis} \citep{2014MNRAS.440..387K}}}
-
-
+\newglossaryentry{astropy}{name=ASTROPY, text=\textsc{astropy}, description=\textsc{astropy} framework, first = \textsc{astropy} \citep{2013A&A...558A..33A}}
 \newglossaryentry{artis}{name=ARTIS, text=\textsc{artis}, description= ARTIS MC code, first = \textsc{artis} \citep{2009MNRAS.398.1809K}}
 \newglossaryentry{sedona}{name=SEDONA, text=\textsc{sedona}, description= Sedona MC code, first = \textsc{sedona} \citep{2006ApJ...651..366K}}
 \newglossaryentry{mlmc}{name=MLMC, text=ML93, description= Mazzali Lucy Monte Carlo, first ={Mazzali \& Lucy (1993, ML93) code}}
-\newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= TARDIS MC code, first = {\textsc{starkit} \citep{wolfgang_kerzendorf_2015_28016}}}
+\newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= TARDIS MC code, first = {\textsc{starkit} \cite{wolfgang_kerzendorf_2015_28016}}}
 
-\newglossaryentry{pyne}{name=PYNE, text=\textsc{pyne}, description= PYNE code, first = {\textsc{pyne} \citep{Scopatz2012a}}}
+\newglossaryentry{pyne}{name=PYNE, text=\textsc{pyne}, description= PYNE code, first = {\textsc{pyne} \cite{Scopatz2012a}}}
 \newglossaryentry{multinest}{name=MULTINEST, text=\textsc{MultiNest}, description=MultiNest, first={\textsc{MultiNest} \citep{2009MNRAS.398.1601F}}}
+\newglossaryentry{wsynphot}{name=WSYNPHOT, text=\textsc{wsynphot}, description=MultiNest, first={\textsc{wsynphot} \protect\footnote{\url{https://github.com/wkerzendorf/wsynphot}}}}
+\newglossaryentry{specutils}{name=SPECUTILS, text=\textsc{specutils}, description=specutils, first={\textsc{specutils} \protect\footnote{\url{https://github.com/astropy/specutils}}}}
 
 
 % ------------------- Services ---------------------
@@ -189,7 +186,7 @@
 \newglossaryentry{loss}{name=LOSS, description={Lick Observatory Supernova Search  \citep{2000AIPC..522..103L}}, first={Lick Observatory Supernova Search \citep[LOSS;][]{2000AIPC..522..103L}}}
 \newglossaryentry{ctss}{name=CTSS,description={Cal\'{a}n/Tololo Supernova Survey \citep{1993AJ....106.2392H}}, first={Cal\'{a}n/Tololo supernova survey \citep[CTSS;][]{1993AJ....106.2392H}}}
 \newglossaryentry{ctio}{name= CTIO, description={Cerro Tololo Inter-American Observatory}, first={Cerro Tololo Inter-American Observatory (CTIO)}}
-\newglossaryentry{ptf}{name=PTF, description={Palomar Transient Factory \citep{2009PASP..121.1334R}}, first={Palomar Transient Factory \citep[PTF;][]{2009PASP..121.1334R}}}
+\newglossaryentry{ptf}{name=PTF, description={Palomar Transient Factory \citep{2009PASP..121.1334R}}, first={Palomar Transient Factory \cite[PTF;][]{2009PASP..121.1334R}}}
 \newglossaryentry{batse}{name=BATSE, description={Burst and Transient Source Experiment mounted on the Compton Gamma Ray Observatory}, first={Burst and Transient Source Experiment (BATSE)}}
 \newglossaryentry{bepposax}{name=BeppoSAX, description={\xray\ satellite named in honor of Giuseppe "Beppo" Occhialini}}
 \newglossaryentry{rosat}{name=ROSAT, description={short for R\"{o}ntgensatellit}, first={ROSAT}}
