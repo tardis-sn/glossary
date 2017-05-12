@@ -7,7 +7,10 @@
 %\newcommand{\ivoa}[1]{\href{http://nvo.stsci.edu/vor10/getRecord.aspx?id=#1}{#1}}
 
 \usepackage{xspace}
-
+\usepackage[xindy, toc, hyperfirst=false, nolist, nostyles, sanitize={name=false,description=false,symbol=false}]{glossaries}
+\glsdisablehyper
+\usepackage[hyperref,x11names, table]{xcolor}
+\usepackage{hyperref}
 
 \newcommand{\eg}{{\em e.g.,}}
 \newcommand{\ie}{{\em i.e.,}}
