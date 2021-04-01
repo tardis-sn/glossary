@@ -5,13 +5,13 @@
 % RESOLVE IVOA IDENTIFIERS ON THE US-VO DIRECTORY
 
 %\newcommand{\ivoa}[1]{\href{http://nvo.stsci.edu/vor10/getRecord.aspx?id=#1}{#1}}
-\PassOptionsToPackage{draft}{hyperref}
-\usepackage{xspace}
 
 \usepackage[xindy, toc, hyperfirst=false, nolist, nostyles, sanitize={name=false,description=false,symbol=false}]{glossaries}
 \glsdisablehyper
-\usepackage[hyperref,x11names, table]{xcolor}
 
+%%%%%%%%%%%%%% General terms %%%%%%%%%%%%%%%%
+
+\newglossaryentry{nlp}{name=NLP, description={Natural Language Processing}, first={Natural Language Processing (NLP)}}
 
 %%%%%%%%%%% GENERAL ASTRONOMY %%%%%%%%%%%%%%%%%%
 \newcommand{\msun}{\hbox{$M_{\odot}$}}
@@ -49,6 +49,12 @@
 
 \newcommand{\nucl}[2]{\ensuremath{^{#2}\textrm{#1}}}
 \makeatletter \newcommand{\ion}[2]{#1 \textsc{\@roman{#2}}} \makeatother
+
+% ---------------- supernova object lookup ---------------
+\newcommand{\sn}[2]{SN~#1#2\xspace}
+
+\newcommand{\snr}[1]{SNR~#1\xspace}
+\newcommand{\grb}[1]{GRB~#1\xspace}
 
 %%%%%%%%%%% GENERAL ASTRONOMY GLOSSARY %%%%%%%%%%%%%%%%%%%%%%%
 \newglossaryentry{angstrom}{name=\AA, description={unit of length $10^{-10}$\,m}, sort=angstrom}
@@ -120,6 +126,12 @@
 \newcommand{\lum}{\ensuremath{L}}
 \newcommand{\loglbol}{\ensuremath{\log{L/L_\odot}}}
 
+%%%%%%%%%%%%%% Machine Learning %%%%%%%%%%%%%%%
+
+\newglossaryentry{pca}{name=PCA,description={Princpal Component Analysis}, first={Princpal Component Analysis (PCA)}}
+
+\newglossaryentry{gp}{name=GP,description={Gaussian Process}, first={Gaussian Process (GP)}}
+
 
 %%%%%%%%%%%%%%%%%%%% Software %%%%%%%%%%%%%%%%%%%%%
 
@@ -163,6 +175,10 @@
 \newglossaryentry{cmfgen}{name=CMFGEN, text=\textsc{cmfgen}, description=CMFGGEn radiative transfer code, first = \textsc{cmfgen} \citep{1998ApJ...496..407H}}
 \newglossaryentry{sedona}{name=SEDONA, text=\textsc{sedona}, description= Sedona MC code, first = \textsc{sedona} \citep{2006ApJ...651..366K}}
 \newglossaryentry{phoenix}{name=PHOENIX, text=\textsc{phoenix}, description= PHOENIX radiative transfer code, first = \textsc{phoenix} \citep{1999jcoam.109...41h,1998ApJ...495..370B,1997ApJ...483..390H,1996ApJ...462..386H,1997ApJ...490..803H}}
+
+\newglossaryentry{mesa}{name=MESA, text=\textsc{mesa}, description=Stellar Evolution coide, first = \textsc{mesa} \citep{2011ApJS..192....3P,2013ApJS..208....4P,2015ApJS..220...15P,2016ApJS..222....8D,2018ApJS..234...34P,2019ApJS..243...10P}}
+\newglossaryentry{stella}{name=STELLA, text=\textsc{stella}, description=Radiative transfer code, first = \textsc{stella} \citep{1998ApJ...496..454B,2004Ap&SS.290...13B,2006A&A...453..229B}}
+
 \newglossaryentry{mlmc}{name=MLMC, text=ML93, description= Mazzali Lucy Monte Carlo, first ={Mazzali \& Lucy (1993, ML93) code}}
 \newglossaryentry{starkit}{name=STARKIT, text=\textsc{starkit}, description= TARDIS MC code, first = {\textsc{starkit} \citep{wolfgang_kerzendorf_2015_28016}}}
 
@@ -180,18 +196,27 @@
 \newglossaryentry{sdss}{name=SDSS, description={Sloan Digital Sky Survey}}
 \newglossaryentry{dss}{name=DSS, description={Digitized Sky Survey}}
 
-
-% ------------------------ ORGANIZATIONS TELESCOPES  ----------------
-\newglossaryentry{wifes}{name=WIFES, text=\textsc{WiFeS}, first={\textsc{WiFeS} \citep{2007Ap&SS.310..255D}},  description={Wide Field Spectrograph - \gls{ifu} mounted on the 2.3\,m telescope at Siding Spring Observatory}}
-
-\newglossaryentry{scp}{name=SCP,description={Supernova Cosmology Project, led by Saul Perlmutter}, first={Supernova Cosmology Project (SCP)}}
-\newglossaryentry{hzsns}{name=HZSNS,description={High Z Supernova Search, led by Brian Schmidt}, first={High Z Supernova Search (HZSNS)}}
+%%%%%%% ORGANIZATIONS %%%%%%%%%%%%%%
 
 \newglossaryentry{eso}{name=ESO, description={European Southern Observatory}, first={European Southern Observatory (ESO)}}
+\newglossaryentry{eso.opc}{name=OPC, description={Observing Programmes Comittee}, first={Observing Programmes Comittee (OPC)}}
+\newglossaryentry{iau}{name=IAU,description={International Astronomical Union}, first={IAU}}
+\newglossaryentry{ctio}{name= CTIO, description={Cerro Tololo Inter-American Observatory}, first={Cerro Tololo Inter-American Observatory (CTIO)}}
+
+%%% US organizations
+\newglossaryentry{nsf}{name=NSF, description={National Science Foundation}, first={National Science Foundation (NSF)}}
+
+% ------------------------ TELESCOPES & Instruments  ----------------
+\newglossaryentry{wifes}{name=WIFES, text=\textsc{WiFeS}, first={\textsc{WiFeS} \citep{2007Ap&SS.310..255D}},  description={Wide Field Spectrograph - \gls{ifu} mounted on the 2.3\,m telescope at Siding Spring Observatory}}
+
+\newglossaryentry{scp}{name=SCP, description={Supernova Cosmology Project, led by Saul Perlmutter}, first={Supernova Cosmology Project (SCP)}}
+\newglossaryentry{hzsns}{name=HZSNS, description={High Z Supernova Search, led by Brian Schmidt}, first={High Z Supernova Search (HZSNS)}}
+
 \newglossaryentry{vlt}{name=VLT,description={Very Large Telescope located on Cerro Paranal (Chile)}, first={Very Large Telescope (VLT)}}
 \newglossaryentry{flames}{name=FLAMES,description={Multi-object, intermediate and high resolution spectrograph mounted on the  \gls{vlt}}}
 
 %%%%%%%%%% KECK %%%%%%%%%%%
+
 \newglossaryentry{hires}{name=HIRES, description={High Resolution Echelle Spectrometer mounted on the Keck Telescope}, first={High Resolution Echelle Spectrometer \citep[HIRES;][]{1994SPIE.2198..362V}}}
 
 \newglossaryentry{lris}{name=LRIS,description={Low Resolution Imaging Spectrometer mounted on the Keck Telescope}, first={Low-Resolution Imaging Spectrometer \citep[LRIS;][]{Oke95}}}
@@ -202,11 +227,10 @@
 \newglossaryentry{essence}{name=ESSENCE,description={The `Equation of State: SupErNovae trace Cosmic Expansion' project \citep[ESSENCE;][]{2002AAS...201.7809G}}, first={`The Equation of State: SupErNovae trace Cosmic Expansion' \citep[ESSENCE;][]{2002AAS...201.7809G}}}
 \newglossaryentry{ifu}{name=IFU,description={Optical instrument combining spectrographic and imaging capabilities, used to obtain spatially resolved spectra}, first={Integral Field Unit (IFU)}, firstplural={Integral Field Units (IFUs)}}
 
-
 \newglossaryentry{besancon}{name=Besan\c{c}on Model, description={Model of stellar population synthesis of the Galaxy, including kinematics.}}%  \verb+http://model.obs-besancon.fr+} }, nonumberlist=true}
 
 \newglossaryentry{int}{name=INT,description={Isaac Newton 2.5\,m Telescope}, first={Isaac Newton 2.5\,m Telescope (INT)}}
-\newglossaryentry{iau}{name=IAU,description={International Astronomical Union}, first={IAU}}
+
 \newglossaryentry{chandra}{name=Chandra,description={Chandra \xray\ Observatory (space-based)}}
 \newglossaryentry{hst}{name=HST,description={Hubble Space Telescope}}
 \newglossaryentry{hst.wfpc2}{name=WFPC2,description={Wide-Field Planetary Camera 2 mounted on the \gls{hst}}, first={Wide-Field Planetary Camera 2 (WFPC2)}}
@@ -214,26 +238,25 @@
 \newglossaryentry{hst.wfc3}{name=WFC3,description={Wide-Field Camera 3 mounted on the \gls{hst}}, first={Wide-Field Camera 3 (WFC3)}}
 \newglossaryentry{hst.cte}{name=CTE, description={charge transfer efficiency (CTE)}, first={charge transfer efficiency \citep[CTE; see ][for a description]{2009acs..rept....1C}}}
 
-
 \newglossaryentry{snls}{name=SNLS,description={Supernova Legacy Survey \citep{2003AAS...203.8209P}}, first={Supernova Legacy Survey \citep[SNLS;][]{2003AAS...203.8209P}}}
 \newglossaryentry{dass}{name=DASS, description={Digitized Astronomy Supernova Survey \citep{1975PASP...87..565C}}, first={Digitized Astronomy Supernova Survey \citep[DASS;][]{1975PASP...87..565C}}}
 \newglossaryentry{bait}{name=BAIT, description={Berkley Automatic Imaging Telescope \citep{1993PASP..105.1164R}}, first={Berkley Automatic Imaging Telescope \citep[BAIT;][]{1993PASP..105.1164R}}}
 \newglossaryentry{kait}{name=KAIT, description={Katzman Automatic Imaging Telescope \citep{2001ASPC..246..121F}}, first={Katzman Automatic Imaging Telescope \citep[KAIT;][]{2001ASPC..246..121F}}}
 \newglossaryentry{loss}{name=LOSS, description={Lick Observatory Supernova Search  \citep{2000AIPC..522..103L}}, first={Lick Observatory Supernova Search \citep[LOSS;][]{2000AIPC..522..103L}}}
 \newglossaryentry{ctss}{name=CTSS,description={Cal\'{a}n/Tololo Supernova Survey \citep{1993AJ....106.2392H}}, first={Cal\'{a}n/Tololo supernova survey \citep[CTSS;][]{1993AJ....106.2392H}}}
-\newglossaryentry{ctio}{name= CTIO, description={Cerro Tololo Inter-American Observatory}, first={Cerro Tololo Inter-American Observatory (CTIO)}}
+
 \newglossaryentry{ptf}{name=PTF, description={Palomar Transient Factory \citep{2009PASP..121.1334R}}, first={Palomar Transient Factory \citep[PTF;][]{2009PASP..121.1334R}}}
 \newglossaryentry{batse}{name=BATSE, description={Burst and Transient Source Experiment mounted on the Compton Gamma Ray Observatory}, first={Burst and Transient Source Experiment (BATSE)}}
 \newglossaryentry{bepposax}{name=BeppoSAX, description={\xray\ satellite named in honor of Giuseppe "Beppo" Occhialini}}
 \newglossaryentry{rosat}{name=ROSAT, description={short for R\"{o}ntgensatellit}, first={ROSAT}}
 \newglossaryentry{hete2}{name=HETE2, description={High Energy Transient Explorer}, first={High Energy Transient Explorer (HETE)}}
 \newglossaryentry{ska}{name=SKA, description={Square Kilometre Array}, first={Square Kilometre Array (SKA)}}
+\newglossaryentry{swift}{name=Swift, description={Swift Gamma-Ray Burst Mission}}
 
 % ----------------- Gemini and Gemini Instrumentation ----------------
 \newglossaryentry{gnirs}{name=GNIRS, description={Gemini Near InfraRed Spectrograph mounted on the Gemini North Telescope}}
 \newglossaryentry{gmosn}{name=GMOS, description={Gemini Multi Object Spectrograph mounted on the
  Gemini North Telescope}, first={GMOS \citep[Gemini Multi Object Spectrograph;][]{2004PASP..116..425H}}}
-\newglossaryentry{swift}{name=Swift, description={Swift Gamma-Ray Burst Mission}}
 
 %%%%%%%% VLA 
 \newglossaryentry{vla}{name=VLA, description={Very Large Array radio telescope located in North America}, first={Very Large Array (VLA)}}
@@ -250,13 +273,6 @@
 \newglossaryentry{lisa}{name=LISA, description={Laser Interferometer Space Antenna \citep{1994ESAJ...18..219J}}, first={Laser Interferometer Space Antenna \citep[LISA;][]{1994ESAJ...18..219J}}}
 
 
-% ---------------- supernova object lookup ---------------
-\newcommand{\sn}[2]{SN~#1#2\xspace}
-
-\newcommand{\snr}[1]{SNR~#1\xspace}
-\newcommand{\grb}[1]{GRB~#1\xspace}
-
-
 
 
 % ----------------- Supernovae -------------
@@ -264,8 +280,6 @@
 
 % ----------------- Supernova Physics -------
 \newglossaryentry{irc}{name=IRC, text={IRC}, description={infrared catastrophe}, first={infrared catastrophe \citep[IRC;][]{1980PhDT.........1A}}}
-
-
 
 % ---------------- Supernova Type Ia ----------------
 \newglossaryentry{sn}{name=Supernova, text={SN}, plural={SNe}, description={exploding star}, nonumberlist=true, first={supernova (SN)}, firstplural={supernovae (SNe)}}
@@ -336,17 +350,12 @@
 
 
 
-%white dwarfs
+%%%%%%%%%%%%%%%%%%%%%%%%% white dwarfs %%%%%%%%%%%%%%%%%%%%%%%%% 
 \newglossaryentry{wd}{name=white dwarf (WD), text=WD, description={White Dwarf - extremely dense stellar remnant}, first={white dwarf (WD)}}
 \newglossaryentry{onemgwd}{name= Oxygen/Neon (ONe), text={ONe-WD},description={Oxygen/Neon White Dwarf}, first={oxygen/neon White Dwarf (ONe-WD)}, parent=wd}
 \newglossaryentry{cowd}{name=carbon/oxygen (CO), text={CO-WD}, description={carbon/oxygen white dwarf}, first={carbon/oxygen white dwarf (CO-WD)}, firstplural = {carbon/oxygen white dwarfs (CO-WDs)}, parent=wd}
 
-
-
-
-
 \newglossaryentry{sds}{name=SD-Scenario,description={single-degenerate scenario (single white dwarf accreting from non-degenerate companion)}, first={single-degenerate scenario (SD-scenario)}}
-
 
 \newglossaryentry{dds}{name=DD-Scenario, description={double degenerate scenario (merging of two white dwarfs)}, first={double-degenerate scenario (DD-scenario)}}
 
@@ -362,12 +371,10 @@
 \newglossaryentry{w7}{name={W7 model},description={W7 model \citep{1984ApJ...286..644N}},first = {W7 model \citep{1984ApJ...286..644N}}}
 
 
-
-
-
-
-
-
-%general statistics
+%%%%%%%%%%%%% STATISTICS %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newglossaryentry{stats.pdf}{name=PDF, description={Probability Density Function}, first={Probability Density Function}}
+
+%%%%%%%%%%%%%%% PEER REVIEW %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossaryentry{dpr}{name=DPR, description={Distributed Peer Review}, first={Distributed Peer Review (DPR)}}
